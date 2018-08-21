@@ -1,0 +1,26 @@
+<table class="food-docs">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headers">
+        {{header.label}}
+      </th>
+      <th>
+        <!-- option to remove -->
+        <button (click)="restoreDocs()">Restore</button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doc of docs">
+      <td *ngFor="let header of headers">
+        <div [ngClass]="header.class ? header.class(doc[header.key]) : ''">
+          {{header.output ? header.output(doc[header.key]) : doc[header.key]}}
+        </div>
+      </td>
+      <td><button (click)="removeDoc(doc.id)">Remove</button></td>
+    </tr>
+    <tr *ngIf="loading || docs.length === 0">
+      <td colspan="4">{{loading ? 'Loading Docs' : 'No Docs Found'}}</td>
+    </tr>
+  </tbody>
+</table>

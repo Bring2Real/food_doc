@@ -1,0 +1,36 @@
+table.food-docs {
+  box-shadow: 1px 1px 3px;
+  margin: 1em auto;
+  padding: 10px;
+  width: 50%;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+table.food-docs thead tr {
+  background: lightcyan;
+}
+
+table.food-docs tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+table.food-docs tbody tr:nth-child(odd) {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+table.food-docs tbody tr:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+table.food-docs td {
+  text-align: center;
+}
+
+table.food-docs td .green {
+  color: green;
+}
+
+table.food-docs td .red {
+  color: red;
+}
